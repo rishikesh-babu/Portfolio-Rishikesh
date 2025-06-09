@@ -7,6 +7,7 @@
 body {
     background-color: #0F172A;
     color: white;
+    font-family: monospace;
 }
 
 nav {
@@ -135,7 +136,7 @@ nav {
     min-height: 100dvh;
     display: flex;
     flex-direction: column-reverse;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     font-family: monospace;
 }
@@ -177,13 +178,13 @@ nav {
 .home-button .contact {
     font-size: 18px;
     padding: 12px 24px;
-    background: linear-gradient(to right, #00ffff, #007cf0);
+    /* background: linear-gradient(to right, #00ffff, #007cf0); */
     color: black;
     border: none;
     border-radius: 10px;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.2s ease-in-out;
     box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
 }
 
@@ -203,6 +204,10 @@ nav {
     color: white;
 }
 
+.home-button .download-cv:active, 
+.home-button .contact:active {
+    transform: scale(0.9);
+}
 
 .profile {
     margin-block: 2.5em;
@@ -236,18 +241,155 @@ nav {
 /* About */
 .about {
     min-height: 100vh;
+    background-color: #16223f;
+    padding-top: 3rem;
 }
 
 .about-heading {
     font-size: 2rem;
     text-align: center;
+    margin-bottom: 2rem;
 }
 
-.about img {
+.about .image-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.about .image-content img {
     height: 17rem;
     width: 17rem;
     object-fit: cover;
     border: 3px solid #00ffff;
     border-radius: 1000000px;
+}
 
+.about .about-content {
+    padding-inline: 7px;
+    font-family: monospace;
+}
+
+.about .sub-heading {
+    font-size: 2rem;
+    color: #00ffff;
+}
+
+.about .about-content p {
+    font-size: 1.2rem;
+}
+
+.about .read-more {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Purple to blue */
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(38, 117, 252, 0.4); /* blue shadow */
+    transition: all 0.2s ease;
+}
+
+.about .read-more:hover {
+    box-shadow: 0 6px 14px rgba(38, 117, 252, 0.6);
+    transform: scale(1.05);
+}
+
+.about .read-more:active {
+    transform: scale(0.9);
+}
+/* Portfolio Section */
+.portfolio {
+    min-height: 100dvh;
+    background: linear-gradient(to bottom right, #0f172a, #1e293b); /* dark blue gradient */
+    padding: 3rem 1rem;
+    color: #fff;
+}
+
+.portfolio .heading {
+    font-size: 2.5rem;
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    color: #38bdf8;
+}
+
+/* Projects container */
+.portfolio .project-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+/* Project Card */
+.portfolio .project {
+    background: #1e293b;
+    border-radius: 1.5rem;
+    padding: 1.5rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 320px;
+    text-align: center;
+}
+
+.portfolio .project:hover {
+    /* transform: translateY(-8px); */
+    box-shadow: 0 12px 28px rgba(56, 189, 248, 0.3);
+}
+
+/* Image */
+.portfolio .project img {
+    width: 100%;
+    height: 200px;
+    border-radius: 1rem;
+    object-fit: cover;
+    object-position: center top;
+    border: 2px solid #38bdf8;
+    transition: transform 0.3s ease;
+}
+
+/* Project Name */
+.portfolio .project .name {
+    font-size: 1.25rem;
+    margin: 1rem 0;
+    font-weight: 600;
+    color: #f1f5f9;
+}
+
+/* View Buttons */
+.portfolio .project .view {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.portfolio .project .view button {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 9999px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: #fff;
+}
+
+.portfolio .project .github {
+    background: linear-gradient(135deg, #6b7280, #374151); /* grey gradient */
+}
+
+.portfolio .project .live-demo {
+    background: linear-gradient(135deg, #06b6d4, #3b82f6); /* cyan to blue */
+}
+
+.portfolio .project .view button:hover {
+    transform: scale(1.05);
 }
