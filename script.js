@@ -1,11 +1,12 @@
 let menuButton = document.querySelector('.menu-button')
 let menu = document.querySelector('.menu')
 let iconMenu = document.querySelectorAll('.icon-menu')
-let isOpen = false 
+let isOpen = false
 
-menuButton.addEventListener('click', handleOpenMenu)
+menuButton.addEventListener('click', handleMenu)
+menu.addEventListener('click', handleMenu)
 
-function handleOpenMenu() {
+function handleMenu() {
     isOpen = !isOpen
 
     menu.style.display = isOpen ? 'flex' : 'none'
