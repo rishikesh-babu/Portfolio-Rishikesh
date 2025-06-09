@@ -44,6 +44,8 @@ nav {
     position: absolute;
     top: 100%;
     right: 1em;
+    background-color: inherit;
+    opacity: 90%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 1rem;
     z-index: 5;
@@ -130,24 +132,122 @@ nav {
 
 /* Home */
 .home {
-    border: 1px solid white;
+    min-height: 100dvh;
     display: flex;
     flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
-
+    font-family: monospace;
 }
 
+.home-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-content h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.home-content h3 span {
+    color: #0ef;
+}
+
+.home-content h1 {
+    font-size: 1.6rem;
+    line-height: 2;
+}
+
+/* .home-content p {
+    font-size: 1rem;
+    padding: 1.5rem;
+    font-family: monospace;
+} */
+
+.home-button {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.home-button .download-cv,
+.home-button .contact {
+    font-size: 18px;
+    padding: 12px 24px;
+    background: linear-gradient(to right, #00ffff, #007cf0);
+    color: black;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.home-button .download-cv:hover,
+.home-button .contact:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+}
+
+/* Optional variant styles */
+.home-button .download-cv {
+    background: linear-gradient(to right, #00ffff, #00ff99);
+}
+
+.home-button .contact {
+    background: linear-gradient(to right, #ff00cc, #3333ff);
+    color: white;
+}
+
+
 .profile {
-    width: fit-content;
-    height: fit-content;
+    margin-block: 2.5em;
     padding: 5px;
 }
 
 .profile img {
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
     object-fit: cover;
     border-radius: 10000px;
     box-shadow: 1px 1px 61px 22px #00FFFF;
+    animation: profileImageAnimation 4s ease infinite;
+}
+
+@keyframes profileImageAnimation {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+
+    }
+}
+
+/* About */
+.about {
+    min-height: 100vh;
+}
+
+.about-heading {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.about img {
+    height: 17rem;
+    width: 17rem;
+    object-fit: cover;
+    border: 3px solid #00ffff;
+    border-radius: 1000000px;
+
 }
