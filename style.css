@@ -72,10 +72,6 @@ nav {
     transition: color 0.4s;
 }
 
-.menu ul li:hover {
-    color: #00FFFF;
-}
-
 .menu ul li::after {
     content: '';
     position: absolute;
@@ -85,6 +81,10 @@ nav {
     height: 2px;
     background-color: #00FFFF;
     transition: width 0.3s ease;
+}
+
+.menu ul li:hover {
+    color: #00FFFF;
 }
 
 .menu ul li:hover::after {
@@ -154,19 +154,39 @@ nav {
 }
 
 .home-content h3 span {
-    color: #0ef;
+    color: #00ffff;
 }
 
 .home-content h1 {
-    font-size: 1.6rem;
-    line-height: 2;
+    font-size: 2.5rem;
+    font-weight: bold;
+    line-height: 1.2;
+    color: #00ffff;
+    position: relative;
+    overflow: hidden;
+    width: 14ch;
 }
 
-/* .home-content p {
-    font-size: 1rem;
-    padding: 1.5rem;
-    font-family: monospace;
-} */
+.home-content h1::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: #00ffff;
+    transform: translateX(-100%);
+    animation: underlineSweep 4s ease-in-out infinite;
+}
+
+@keyframes underlineSweep {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
 
 .home-button {
     margin-top: 2rem;
@@ -203,10 +223,11 @@ nav {
     box-shadow: 0 6px 20px rgba(0, 255, 255, 0.4);
 }
 
-.home-button .download-cv:active, 
+.home-button .download-cv:active,
 .home-button .contact:active {
     transform: scale(0.95);
 }
+
 .profile {
     padding: 1rem;
     display: flex;
@@ -215,7 +236,7 @@ nav {
 }
 
 .profile img {
-   width: 280px;
+    width: 280px;
     height: 280px;
     object-fit: cover;
     border-radius: 50%;
@@ -223,18 +244,28 @@ nav {
     animation: floatImage 4s ease-in-out infinite;
 }
 
-@keyframes profileImageAnimation {
+@keyframes floatImage {
     0% {
         transform: translateY(0);
     }
 
     50% {
-        transform: translateY(-10px);
+        transform: translateY(-20px);
     }
 
     100% {
         transform: translateY(0);
 
+    }
+}
+
+@media (min-width: 712px) {
+    .home {
+        flex-direction: row;
+    }
+
+    .home .home-content h3 {
+        font-size: 1.8rem;
     }
 }
 
@@ -321,7 +352,8 @@ nav {
 /* Portfolio Section */
 .portfolio {
     min-height: 100dvh;
-    background: linear-gradient(to bottom right, #0f172a, #1e293b); /* dark blue gradient */
+    background: linear-gradient(to bottom right, #0f172a, #1e293b);
+    /* dark blue gradient */
     padding: 3rem 1rem;
     color: #fff;
 }
@@ -397,11 +429,13 @@ nav {
 }
 
 .portfolio .project .github {
-    background: linear-gradient(135deg, #6b7280, #374151); /* grey gradient */
+    background: linear-gradient(135deg, #6b7280, #374151);
+    /* grey gradient */
 }
 
 .portfolio .project .live-demo {
-    background: linear-gradient(135deg, #06b6d4, #3b82f6); /* cyan to blue */
+    background: linear-gradient(135deg, #06b6d4, #3b82f6);
+    /* cyan to blue */
 }
 
 .portfolio .project .view button:hover {
