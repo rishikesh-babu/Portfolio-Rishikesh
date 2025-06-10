@@ -7,20 +7,29 @@ menuButton.addEventListener('click', handleMenu)
 menu.addEventListener('click', handleMenu)
 
 function handleMenu() {
-  isOpen = !isOpen
+	isOpen = !isOpen
 
-  menu.style.display = isOpen ? 'flex' : 'none'
+	menu.style.display = isOpen ? 'flex' : 'none'
 
-  iconMenu[0].style.display = isOpen ? 'none' : 'flex'
-  iconMenu[1].style.display = isOpen ? 'flex' : 'none'
+	iconMenu[0].style.display = isOpen ? 'none' : 'flex'
+	iconMenu[1].style.display = isOpen ? 'flex' : 'none'
 }
 
 ScrollReveal({
-  reset: true,
-  distance: '100px',
-  duration: 1000,
-  delay: 200,
+	reset: true,
+	distance: '50px',
+	duration: 1000,
+	delay: 200,
 });
 
-ScrollReveal().reveal('.profile, .about-heading', { origin: 'top'});
-ScrollReveal().reveal('.home .home-button', {origin: 'bottom'})
+ScrollReveal().reveal('.profile, .about-heading', { origin: 'top' });
+ScrollReveal().reveal('.home .home-button', { origin: 'bottom' })
+
+// Multi text typing 
+const typed = new Typed('.home-multi-text', {
+	strings: ['Web Developer', 'Fronend Developer', 'Backend Developer'], 
+	typeSpeed: 100, 
+	backSpeed: 100, 
+	backDelay: 1000,
+	loop: true
+})
