@@ -14,3 +14,29 @@ function handleMenu() {
     iconMenu[0].style.display = isOpen ? 'none' : 'flex'
     iconMenu[1].style.display = isOpen ? 'flex' : 'none'
 }
+
+// Base config (optional if you set per element)
+const sr = ScrollReveal({
+  reset: true,
+  distance: '100px',
+  duration: 1000,
+  delay: 200,
+});
+
+// Reveal profile image from top
+sr.reveal('.profile', {
+  origin: 'top',
+});
+
+// Reveal Download CV from left
+sr.reveal('.download-cv', {
+  origin: 'left',
+  viewFactor: 0.1
+});
+
+// Reveal Contact Info from right
+sr.reveal('.contact', {
+  origin: 'right',
+});
+
+ScrollReveal().reveal('.home .contact', { origin: 'right' })
