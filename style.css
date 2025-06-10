@@ -4,6 +4,10 @@
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: #0F172A;
     color: white;
@@ -89,12 +93,6 @@ nav {
 
 .menu ul li:hover::after {
     width: 100%;
-}
-
-@keyframes menuAnimation {
-    from {
-        width: 0ch;
-    }
 }
 
 /*menu on larger screens */
@@ -242,6 +240,7 @@ nav {
     border-radius: 50%;
     box-shadow: 0 0 50px rgba(0, 255, 255, 0.5);
     animation: floatImage 4s ease-in-out infinite;
+    will-change: transform;
 }
 
 @keyframes floatImage {
