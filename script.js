@@ -22,5 +22,5 @@ ScrollReveal({
   delay: 200,
 });
 
-ScrollReveal().reveal('.profile, .about ', { origin: 'top'});
+ScrollReveal().reveal('.profile, .about-heading', { origin: 'top'});
 ScrollReveal().reveal('.home .home-button', {origin: 'bottom'})

@@ -251,7 +251,7 @@ nav {
     object-fit: cover;
     border-radius: 50%;
     box-shadow: 0 0 50px rgba(0, 255, 255, 0.5);
-    animation: floatImage 4s ease-in-out infinite;
+    /* animation: floatImage 4s ease-in-out infinite; */
     will-change: transform;
 }
 
